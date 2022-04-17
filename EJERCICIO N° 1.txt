@@ -1,0 +1,51 @@
+
+
+#include <iostream>
+#include <locale.h>
+#include <cstdlib>
+using namespace std;
+
+int main ()
+{
+    setlocale(LC_CTYPE, "Spanish");
+    int anio_actual, mes_actual, dia_actual;
+    int anio_nacimiento, mes_nacimiento, dia_nacimeinto;
+    int respuesta_dia, respuesta_mes;
+    cout << "       Calcular la Edad, Mes y Dia"<<endl;
+    cout<< "        ---------------------------"<<endl;
+    cout<<endl;
+
+    cout << "Digite el Año Actual: ";   cin >> anio_actual;
+    cout << "Digite el Mes Actual: ";   cin >> mes_actual;
+    cout << "Digite el Dia Actual: ";  cin >> dia_actual;
+
+    cout << "\nDigite el Año Nacimiento: ";  cin >> anio_nacimiento;
+    cout << "Digite el Mes de Nacimiento: ";  cin >> mes_nacimiento;
+    cout << "Digite el dia Nacimiento: ";  cin >> dia_nacimeinto;
+
+    if ( dia_actual < dia_nacimeinto  )
+    {
+        dia_actual = dia_actual + 30;
+        mes_actual = mes_actual - 1;
+        respuesta_dia =  dia_actual - dia_nacimeinto;
+    }
+    else
+        {
+            respuesta_dia =  dia_actual - dia_nacimeinto;
+        }
+    if( mes_actual < mes_nacimiento )
+    {
+        mes_actual = mes_actual + 12;
+        anio_actual = anio_actual - 1 ;
+        respuesta_mes = mes_actual - mes_nacimiento;
+    }
+    else
+        respuesta_mes = mes_actual - mes_nacimiento;
+    cout<<endl;
+    cout << "La edad del usuario es: "<<endl;
+    cout << " Edad: " <<anio_actual - anio_nacimiento << endl;
+    cout << " Mes: " << respuesta_mes << endl;
+    cout << " Dia: " << respuesta_dia << endl;
+
+    return 0;
+}

@@ -1,0 +1,169 @@
+1. 
+
+
+
+#include<iostream>
+#include<stdlib.h>
+#include<conio.h>
+#include<stdio.h>
+#include <locale.h>
+
+
+using namespace std;
+int main()
+{
+    setlocale(LC_CTYPE, "Spanish");
+    int Matriz[100][100];
+	int q,w,e,r,t,y,h;
+	int tamanio=0;
+	cout<<"            MATRIZ ESPEJO"<<endl;
+    cout<<"           ---------------"<<endl;
+	cout<<"INGRESAR EL TAMAÑO DE LA MATRIZ: "; cin >> tamanio;
+
+	q=tamanio-1;
+    w=q-1;
+    e=w-1;
+    t=e-1;
+    y=t-1;
+    h=y-1;
+
+
+    //q=tamanio-1;
+    //w=tamanio-2;
+    //e=tamanio-3;
+    //t=tamanio-4;
+
+
+    for(int i=0;i<tamanio;i++)
+    {
+           for(int j=0;j<tamanio;j++)
+        {   if(i==j)
+            {
+
+            Matriz[i][j+t]={e};
+            Matriz[i][j+e]={w};
+            Matriz[i][j+w]={q};
+            Matriz[i][j+q]={tamanio};
+            Matriz[i][j]={tamanio/tamanio};
+
+            Matriz[i+t][j]={e};
+            Matriz[i+e][j]={w};
+            Matriz[i+w][j]={q};
+            Matriz[i+q][j]={tamanio};
+
+
+            }
+        }
+
+    }
+
+    for(int i=0;i<tamanio;i++)
+    {
+        for(int j=0;j<tamanio;j++)
+        {
+            cout<<Matriz[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+
+
+2.
+
+#include<iostream>
+#include<stdlib.h>
+#include<conio.h>
+#include<stdio.h>
+#include <locale.h>
+
+
+using namespace std;
+int main()
+{
+    setlocale(LC_CTYPE, "Spanish");
+    int Matriz[100][100];
+	int q,w,e,r,t,y;
+	int tamanio=0;
+	cout<<"            MATRIZ ESPEJO"<<endl;
+    cout<<"           ---------------"<<endl;
+	cout<<"INGRESAR EL TAMAÑO DE LA MATRIZ: "; cin >> tamanio;
+
+	q=tamanio-1;
+    w=q-1;
+    e=w-1;
+    t=e-1;
+    /*
+    q=tamanio-1;
+    w=tamanio-2;
+    e=tamanio-3;
+    t=tamanio-4;
+*/
+    for(int i=1;i<=tamanio;i++)
+    {
+           for(int j=1;j<=tamanio;j++)
+        {
+
+            Matriz[i][j]={i};
+
+
+            }
+    }
+for(int i=1;i<=tamanio;i++)
+    {
+           for(int j=1;j<=tamanio;j++)
+        {
+
+            Matriz[i+1][j+1]={i};
+
+            }
+    }
+
+for(int i=1;i<=tamanio;i++)
+    {
+           for(int j=1;j<=tamanio;j++)
+        {
+
+            Matriz[i+2][j+2]={i};
+
+            }
+    }
+for(int i=1;i<=tamanio;i++)
+    {
+           for(int j=1;j<=tamanio;j++)
+        {
+
+            Matriz[i+3][j+3]={i};
+
+            }
+    }
+    for(int i=1;i<=tamanio;i++)
+    {
+           for(int j=1;j<=tamanio;j++)
+        {
+
+
+            Matriz[i+4][j+4]={i};
+
+            }
+    }
+
+
+    for(int i=1;i<=tamanio;i++)
+    {
+           for(int j=1;j<=tamanio;j++)
+        {
+            }
+    }
+    for(int i=1;i<=tamanio;i++)
+    {
+        for(int j=1;j<=tamanio;j++)
+        {
+            cout<<Matriz[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}

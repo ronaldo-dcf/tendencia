@@ -1,0 +1,176 @@
+
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
+#include <cstdlib>
+using namespace std;
+
+class fraccion {
+float num, den;
+void simplifica();
+public:
+    void ingresar();
+    void imprimir();
+    void validar();
+    fraccion multiplicar(fraccion a, fraccion b);
+    fraccion sumar(fraccion a, fraccion b);
+    fraccion restar(fraccion a, fraccion b);
+    fraccion dividir(fraccion a, fraccion b);
+    fraccion simplificar(fraccion a, fraccion b);
+};
+//implementacion de las funciones
+
+void fraccion::validar(){
+    while(den==0){
+        cout<<"\n Error,.....Ingrese nuevamente el denominador.\n"; cin>>den;
+    }
+}
+void fraccion::ingresar(){
+    cout<<"\n Ingrese el numerador: ";
+    cin>>num;
+    cout<<"\n Ingrese el denominador: ";
+    cin>>den;
+    validar();
+}
+void fraccion::imprimir(){
+    cout<<"\n La fraccion es: ";
+    cout<<num<<"/"<<den<<endl;
+}
+void fraccion::simplifica() {
+    int mcd, temp, resto;
+    mcd = abs(num);
+    temp = den;
+
+    while (temp > 0) {
+        resto = mcd % temp;
+        mcd = temp;
+        temp = resto;
+    }
+
+    if (mcd > 1) {
+        num /= mcd;
+        den /= mcd;
+    }
+}
+
+fraccion fraccion::multiplicar( fraccion a, fraccion b){
+    fraccion aux;
+    aux.num=a.num*b.num;
+    aux.den=a.den*b.den;
+    aux.simplifica();
+    return(aux);
+}
+
+fraccion fraccion::sumar(fraccion a, fraccion b){
+    fraccion y;
+     y.den=a.den*b.den;
+    y.num=(((y.den/a.den)*a.num)+((y.den/b.den)*b.num));
+    y.simplifica();
+    return (y);
+}
+fraccion fraccion::restar(fraccion a, fraccion b){
+    fraccion y;
+    y.den=a.den*b.den;
+    y.num=(((y.den/a.den)*a.num)-((y.den/b.den)*b.num));
+    y.simplifica();
+    return (y);
+}
+
+fraccion fraccion::dividir(fraccion a, fraccion b){
+    fraccion d;
+    d.num=a.num*b.den;
+    d.den=a.den*b.num;
+    d.simplifica();
+    if(d.den<0){
+    d.den=(-1)*d.den; //hace que si es que el denominador es negativo
+    //el signo se presente en d.num=(-1)*d.num;
+}
+return(d);
+}
+
+fraccion fraccion::simplificar(fraccion a, fraccion b)
+{
+    fraccion q;
+    q.num=a.num;
+    q.den=b.num;
+    q.simplifica();
+    return(q);
+}
+
+int main(int argc, char *argv[]) {
+    fraccion obj1, obj2, obj3,u,m,d,simple;
+    int op;
+    char opcion;
+do{
+    cout<<"     MENU CALCULADORA: "<<endl;
+        cout<<"     -----------------"<<endl;
+        cout<<"1. SUMA DE FRACCIONES: "<<endl;
+        cout<<"2. RESTA DE FRACCIONES: "<<endl;
+        cout<<"3. MULTIPLICACION DE FRACCIONE: "<<endl;
+        cout<<"4. DIVISION DE FRACCIOONES: "<<endl;
+        cout<<"5. SIMPLIFICACION DE FRACCIONES: "<<endl;
+        obj1.ingresar();
+        obj1.imprimir();
+        obj2.ingresar();
+        obj2.imprimir();
+
+        cout<<endl;
+        cout<<"Digite un operacion a realizar: ";
+        cin>>op;
+
+        if(op==1)
+    {
+        cout<<"\n Suma: ";
+        obj3=obj3.sumar(obj1, obj2);
+        obj3.imprimir();
+        cout<<"\n Desea seguir operando, presione 'a'. \n Caso contrario cualquiertecla.";
+        cin>>opcion;
+        system("CLS");
+    }
+
+        else if(op==2)
+    {
+            cout<<"\n Resta: ";
+                u=u.restar(obj1, obj2);
+                u.imprimir();
+                cout<<"\n Desea seguir operando, presione 'a'. \n Caso contrario cualquiertecla.";
+        cin>>opcion;
+        system("CLS");
+    }
+
+        else if(op==3)
+    {
+           m=m.multiplicar(obj1, obj2);
+           cout<<"\n Multiplicacion: ";
+           m.imprimir();
+           cout<<"\n Desea seguir operando, presione 'a'. \n Caso contrario cualquiertecla.";
+        cin>>opcion;
+        system("CLS");
+    }
+
+
+        else if(op==4)
+       {
+
+       cout<<"\n Division: ";
+        d=d.dividir(obj1, obj2);
+        d.imprimir();
+        cout<<"\n Desea seguir operando, presione 'a'. \n Caso contrario cualquiertecla.";
+        cin>>opcion;
+        system("CLS");
+       }
+
+      else if(op==5)
+      {
+          cout<<"\n Simplifica: ";
+        simple= simple.simplificar(obj1, obj2);
+        simple.imprimir();
+        cout<<"\n Desea seguir operando, presione 'a'. \n Caso contrario cualquiertecla.";
+        cin>>opcion;
+        system("CLS");
+
+      }
+}while(opcion=='a' || opcion=='A');
+cout<<"\n\t\t\t\t FIN";
+return 0;
+}

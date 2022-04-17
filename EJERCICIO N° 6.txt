@@ -1,0 +1,73 @@
+
+#include<iostream>
+#include<stdlib.h>
+#include<conio.h>
+#include<stdio.h>
+#include <locale.h>
+
+
+using namespace std;
+int main()
+{
+    setlocale(LC_CTYPE, "Spanish");
+    int Matriz[100][100];
+	int q,w,e,r,t,y;
+	int tamanio=0;
+	cout<<"            MATRIZ ESPIRAL"<<endl;
+    cout<<"           ---------------"<<endl;
+	cout<<"INGRESAR EL TAMAÑO DE LA MATRIZ: "; cin >> tamanio;
+        while( tamanio < 0 || tamanio >= 100 || q == 0)
+            {
+		      q = tamanio;
+            }
+    r = 1;
+    q=(tamanio - 1) / 2;
+    w=q;
+    e=q;
+    while(r <= tamanio * tamanio)
+    {
+        y = e;
+        for(t = w; t >= e - 1; t--)
+        {
+            Matriz[t][y] = r;
+            r++;
+        }
+        t++;
+        for(y=t+2; y <= w+1; y++)
+        {
+            Matriz[t][y] = r;
+            r++;
+        }
+        y--;
+        for(t = e; t<= w + 1 ; t++)
+        {
+            Matriz[t][y] = r;
+            r++;
+        }
+        t--;
+        for(y = w; y>= e; y--)
+        {
+            Matriz[t][y] = r;
+            r++;
+        }
+        w++;
+        e--;
+    }
+    for( t= 0; t< tamanio; t++)
+      {
+        for(y=0; y < tamanio; y++)
+        {
+            if(Matriz[t][y] < 10)
+            {
+                cout<< " "<<Matriz[t][y]<<" ";
+            }
+           else
+           {
+               cout << Matriz[t][y]<< " ";
+           }
+        }
+        cout<< endl;
+      }
+
+    return 0;
+}

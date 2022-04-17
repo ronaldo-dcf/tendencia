@@ -1,0 +1,125 @@
+
+#include<iostream>
+#include <conio.h>
+#include <string.h>
+using namespace::std;
+int main()
+{
+	float MatrizA[100], MatrizB[100], MatrizResultante[1000], tamanio;
+    int opcion=0;
+	do
+	{
+		system("CLS");// Limpiar pantalla -clear screen-
+		cout<<"     MENU"<<endl;
+		cout<<"     -----"<<endl;
+		cout<<"0. SALIR DEL PROGRAMA"<<endl;
+        cout<<"1. SUMA: "<<endl;
+        cout<<"2. RESTA "<<endl;
+        cout<<"3. MULTIPICACIÓN "<<endl;
+        cout<<"4. DIVISION "<<endl;
+
+        cout<<endl;
+        cout<<"Ingres una opcion del menu:"; cin>>opcion;
+		switch(opcion)
+		{
+			case 0:
+			break;
+			case 1:
+				cout<<"\n SUMA:"<<endl;
+                    cout<<endl;
+                    cout<<"Ingrese el tamaño del arreglo: "; cin>>tamanio;
+                    cout<<endl;
+                    for(int i=0;i<tamanio;i++)
+                    {
+                        cout<<"Introduzca datos a la Matriz A:  ";
+                        cin>>MatrizA[i];
+                    }
+                cout<<endl;
+                    for(int i=0;i<tamanio;i++)
+                    {
+                        cout<<"Introduzca datos a la Matriz B: ";
+                        cin>>MatrizB[i];
+                    }
+                    for(int i=0; i<tamanio; i++)
+                    {
+                        MatrizResultante[i]=MatrizA[i]+MatrizB[i];
+                        cout<<" La suma de "<<MatrizA[i]<<" y "<<MatrizB[i]<<" es: "<<MatrizResultante[i]<<endl
+                        ;
+                    }
+				system("pause");
+				break;
+			case 2:
+				cout<<"\n RESTA:"<<endl;
+    cout<<endl;
+    cout<<"Ingrese el tamaño del arreglo: "; cin>>tamanio;
+    cout<<endl;
+    for(int i=0;i<tamanio;i++)
+    {
+        cout<<"Introduzca datos a la Matriz A:  ";
+        cin>>MatrizA[i];
+    }
+cout<<endl;
+    for(int i=0;i<tamanio;i++)
+    {
+        cout<<"Introduzca datos a la Matriz B: ";
+        cin>>MatrizB[i];
+    }
+    for(int i=0; i<tamanio; i++)
+    {
+        MatrizResultante[i]=MatrizA[i]-MatrizB[i];
+        cout<<" La resta de "<<MatrizA[i]<<" y "<<MatrizB[i]<<" es: "<<MatrizResultante[i]<<endl;
+    }
+    system("pause");
+				break;
+			case 3:
+				 cout<<"\n MULTIPLICACION:"<<endl;
+        cout<<endl;
+    cout<<"Ingrese el tamaño del arreglo: "; cin>>tamanio;
+    cout<<endl;
+        for(int i=0;i<tamanio;i++)
+    {
+        cout<<"Introduzca datos a la Matriz A:  ";
+        cin>>MatrizA[i];
+    }
+cout<<endl;
+    for(int i=0;i<tamanio;i++)
+    {
+        cout<<"Introduzca datos a la Matriz B: ";
+        cin>>MatrizB[i];
+    }
+    for(int i=0; i<tamanio; i++)
+    {
+        MatrizResultante[i]=MatrizA[i]*MatrizB[i];
+        cout<<" La multiplicación de "<<MatrizA[i]<<" y "<<MatrizB[i]<<" es: "<<MatrizResultante[i]<<endl;
+    }
+    system("pause");
+				break;
+			case 4:
+				 cout<<"\n DIVISION:"<<endl;
+        cout<<endl;
+    cout<<"Ingrese el tamaño del arreglo: "; cin>>tamanio;
+    cout<<endl;
+        for(int i=0;i<tamanio;i++)
+    {
+        cout<<"Introduzca datos a la Matriz A:  ";
+        cin>>MatrizA[i];
+    }
+cout<<endl;
+    for(int i=0;i<tamanio;i++)
+    {
+        cout<<"Introduzca datos a la Matriz B: ";
+        cin>>MatrizB[i];
+    }
+    for(int i=0; i<tamanio; i++)
+    {
+        MatrizResultante[i]=MatrizA[i]/ MatrizB[i];
+        cout<<" La division de "<<MatrizA[i]<<" y "<<MatrizB[i]<<" es: "<<MatrizResultante[i]<<endl;
+    }
+    system("pause");
+				break;
+			default: cout<<"Ingreso una opcion incorrecta"<<endl;
+		}
+	}while(opcion!=0);
+	cout<<"Programa finalizado..."<<endl;
+	return 0;
+}

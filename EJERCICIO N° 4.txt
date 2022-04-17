@@ -1,0 +1,161 @@
+
+#include <iostream>
+#include <string.h>
+#include <conio.h>
+#include <cstdlib>
+using namespace std;
+
+
+int main()
+
+{
+
+    char Caracter[100];
+    char Caracter1[]="1 1";
+    char Caracter2[]="1 1 2";
+    char Caracter3[]="1 1 2 3";
+    char Caracter4[]="1 1 2 3 5";
+    char Caracter5[]="1 1 2 3 5 8";
+    char Caracter6[]="1 1 2 3 5 8 13";
+    char Caracter7[]="1 1 2 3 5 8 13 21";
+    char Caracter8[]="1 1 2 3 5 8 13 21 34";
+    char Caracter9[]="1 1 2 3 5 8 13 21 34 55";
+    char Caracter10[]="1 1 2 3 5 8 13 21 34 55 89";
+    char Caracter11[]="1 1 2 3 5 8 13 21 34 55 89 144";
+    char Caracter12[]="1 1 2 3 5 8 13 21 34 55 89 144 233";
+    char Caracter13[]="1 1 2 3 5 8 13 21 34 55 89 144 233 377";
+    int tamanio;
+    cout<<"Escribe la serie:"; cin.getline(Caracter, 100,'\n');
+    cout<<endl;
+    cout<<"Digite el tamaño de la serie Fibonacci:"; cin>>tamanio;
+    if(tamanio==2)
+    {
+        if(strcmp(Caracter,Caracter1) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+    else if(tamanio==3)
+    {
+        if(strcmp(Caracter,Caracter2) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }else if(tamanio==4)
+    {
+        if(strcmp(Caracter,Caracter3) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }else if(tamanio==5)
+    {
+      if(strcmp(Caracter,Caracter4) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }else if(tamanio==6)
+    {
+        if(strcmp(Caracter,Caracter5) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }else if(tamanio==7)
+    {
+        if(strcmp(Caracter,Caracter6) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+
+    else if(tamanio==8)
+    {
+        if(strcmp(Caracter,Caracter7) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+    else if(tamanio==9)
+    {
+        if(strcmp(Caracter,Caracter8) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+    else if(tamanio==10)
+    {
+        if(strcmp(Caracter,Caracter9) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+    else if(tamanio==11)
+    {
+        if(strcmp(Caracter,Caracter10) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+    else if(tamanio==12)
+    {
+        if(strcmp(Caracter,Caracter11) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+    else if(tamanio==13)
+    {
+        if(strcmp(Caracter,Caracter12) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+    else if(tamanio==14)
+    {
+        if(strcmp(Caracter,Caracter13) == 0)
+   {
+       cout<<" Es una serie fibonacci"<<endl;
+   }
+   else{
+    cout<<" No es una serie fibonacci"<<endl;
+   }
+    }
+cout<<endl;
+
+    return 0;
+}
